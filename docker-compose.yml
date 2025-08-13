@@ -50,32 +50,12 @@ services:
     ports:
       - "8080:8080"
 
-  matriculas-api:
-    build: ./Matriculas/Matriculas.API
-    depends_on:
-      - sqlserver
-      - rabbitmq
-    environment:
-      - ASPNETCORE_URLS=http://+:8080
-    ports:
-      - "8082:8080"
-
-  pagos-api:
-    build: ./Pagos/Pagos.API
-    depends_on:
-      - sqlserver
-      - rabbitmq
-    environment:
-      - ASPNETCORE_URLS=http://+:8080
-    ports:
-      - "8083:8080"
 
   gateway:
     build: ./Gateway
     depends_on:
       - catalogo-cursos-api
-      - matriculas-api
-      - pagos-api
+
     environment:
       - ASPNETCORE_URLS=http://+:8080
     ports:
