@@ -1,0 +1,12 @@
+{
+  "Routes": [
+    {
+      "DownstreamPathTemplate": "/cursos",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [ { "Host": "catalogo-cursos-api", "Port": 8080 } ],
+      "UpstreamPathTemplate": "/catalogo/cursos",
+      "UpstreamHttpMethod": [ "POST" ]
+    }
+  ],
+  "GlobalConfiguration": {}
+}
