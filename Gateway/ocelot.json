@@ -1,0 +1,26 @@
+{
+  "Routes": [
+    {
+      "DownstreamPathTemplate": "/cursos",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [ { "Host": "catalogo-cursos-api", "Port": 8080 } ],
+      "UpstreamPathTemplate": "/catalogo/cursos",
+      "UpstreamHttpMethod": [ "POST" ]
+    },
+    {
+      "DownstreamPathTemplate": "/matriculas",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [ { "Host": "matriculas-api", "Port": 8080 } ],
+      "UpstreamPathTemplate": "/matriculas",
+      "UpstreamHttpMethod": [ "POST" ]
+    },
+    {
+      "DownstreamPathTemplate": "/pagos/{matriculaId}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [ { "Host": "pagos-api", "Port": 8080 } ],
+      "UpstreamPathTemplate": "/pagos/{matriculaId}",
+      "UpstreamHttpMethod": [ "GET" ]
+    }
+  ],
+  "GlobalConfiguration": {}
+}
