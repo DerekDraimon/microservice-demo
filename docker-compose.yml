@@ -50,10 +50,12 @@ services:
     ports:
       - "8080:8080"
 
+
   gateway:
     build: ./Gateway
     depends_on:
       - catalogo-cursos-api
+
     environment:
       - ASPNETCORE_URLS=http://+:8080
     ports:
